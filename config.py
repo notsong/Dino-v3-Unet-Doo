@@ -79,7 +79,7 @@ class Config:
     min_lr: float = 1e-6
 
     # ===========================
-    # Loss — 强化晶界召回
+    # Loss — 强化边缘召回
     # ===========================
     dice_weight: float = 0.45
 
@@ -90,7 +90,7 @@ class Config:
     # 可微分形态学闭运算损失，鼓励断裂处自动连接
     connectivity_weight: float = 0.15
 
-    # BCE正样本权重：漏判晶界的惩罚倍率
+    # BCE正样本权重：漏判边缘的惩罚倍率
     bce_pos_weight: float = 12.0
 
     # ===========================

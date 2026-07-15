@@ -2,7 +2,7 @@
 losses/loss.py
 
 总损失：BCE(pos_weight) + Dice + Boundary + Connectivity
-v4：新增可微分形态学闭运算损失，增强晶界连续性
+v4：新增可微分形态学闭运算损失，增强边缘连续性
 """
 import torch
 import torch.nn as nn
@@ -57,7 +57,7 @@ class ConnectivityLoss(nn.Module):
     """
     可微分形态学闭运算损失
     对预测概率图做 soft-close（dilate→erode），
-    鼓励断裂处（小间隙）被填补，增强晶界拓扑连续性。
+    鼓励断裂处（小间隙）被填补，增强边缘拓扑连续性。
 
     原理：
       close(x) = erode(dilate(x))
